@@ -41,7 +41,7 @@ const Home = ({ language, toggleLanguage }) => {
               <div className="mt-5">
                 <button className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-cyan-500 hover:text-white">
                   <a
-                    href="/src/assets/cv/CV_SEBASTIANCABRERAALCALA.pdf"
+                    href="assets/cv/CV_SEBASTIANCABRERAALCALA.pdf"
                     download="CV_SEBASTIANCABRERAALCALA.pdf"
                   >
                     {getText("Descargar CV")}
