@@ -90,6 +90,13 @@ const Projects = ({ language }) => {
       githubLink: "https://github.com/iSebasC/ProjectBoostrapVue",
       pageLink: "https://proyectobootstrapvue.netlify.app/",
     },
+    {
+      name: getText("Website Nike"),
+      image: "assets/projects/9.jpg",
+      language: ["React", "Vite"],
+      githubLink: "https://github.com/iSebasC/website-nike",
+      pageLink: "https://website-nike.netlify.app",
+    },
   ];
 
   const openGitHubLink = (githubLink) => {
