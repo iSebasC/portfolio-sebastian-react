@@ -11,6 +11,21 @@ const Home = ({ language, toggleLanguage }) => {
     return language === "ES" ? text : getEnglishText(text);
   };
 
+  const getEnglishText = (text) => {
+    // Agrega aquí la traducción al inglés para cada texto en español
+    if (text === "Hola, soy 👋") {
+      return "Hello, I'm 👋";
+    } else if (text === "Desarrollador Full Stack & Diseño Gráfico Digital") {
+      return "Full Stack Developer & Digital Graphic Designer";
+    }  else if (text === "Descargar CV") {
+      return "Download CV";
+    } else if (text === "Proyectos") {
+      return "Projects";
+    } else {
+      return text;
+    }
+  };
+
   useEffect(() => {
     fetchProfileData()
       .then((data) => setProfileData(data))
@@ -29,14 +44,11 @@ const Home = ({ language, toggleLanguage }) => {
                   <h1 className="font-semibold md:text-5xl my-4 text-3xl">
                     {profile.nombre}
                   </h1>
-                  <p className="md:w-96">{profile.area}</p>
+                  <p className="md:w-96">{getText(profile.area)}</p>
                   <div className="mt-5">
                     <button className="btn transition-all duration-500 bg-primary py-2 px-4 rounded text-white hover:bg-cyan-500 hover:text-white">
-                      <a
-                        href={profile.cv}
-                        target="_blank"
-                      >
-                        Descargar CV
+                      <a href={profile.cv} target="_blank">
+                        {getText("Descargar CV")}
                       </a>
                       <FontAwesomeIcon
                         icon={faCircleDown}
@@ -49,7 +61,7 @@ const Home = ({ language, toggleLanguage }) => {
                       duration={900}
                       className="btn transition-all duration-500 py-2 px-6 rounded ml-5 bg-primary text-white hover-bg-cyan-500 hover:text-white"
                     >
-                      Proyectos
+                      {getText("Proyectos")}
                       <FontAwesomeIcon
                         icon={faEye}
                         style={{ marginLeft: "5px" }}
